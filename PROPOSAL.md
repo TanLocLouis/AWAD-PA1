@@ -73,9 +73,9 @@ Kế hoạch 6 Checkpoints được thiết kế vừa sức cho nhóm 3 ngườ
 | **CP#1: Proposal & Plan** | 07/10/2026 | Đề xuất ý tưởng, chốt tính năng LLM, lựa chọn công nghệ, viết proposal và plan; khởi tạo repo cho project. | **Lê Tấn Lộc** |
 | **CP#2: Harness & CI** | 11/11/2026 | Xây dựng các file quy ước; cấu hình lint; cài đặt test framework; khởi tạo và cấu hình CI pipeline, thiết lập branch protection chặn merge. | **Võ Thiện Nhân** |
 | **CP#3: Prototype with LLM feature** | 18/11/2026 | Viết spec và cài đặt tính năng LLM; nạp dữ liệu sản phẩm kèm thông số; ghi log các câu hỏi/đáp. | **Nguyễn Nhật Khang** |
-| **CP#4: Eval, Guardrail & Human gate** | 25/11/2026 | Chuẩn bị bộ khoảng 40-50 câu hỏi có đáp án; chạy eval và ghi nhận tỷ lệ trả lời đúng; thiết lập guardrail; thực hiện và ghi lại biên bản red-team. | **Lê Tuấn Lộc** |
+| **CP#4: Eval, Guardrail & Human gate** | 25/11/2026 | Chuẩn bị bộ khoảng 40-50 câu hỏi có đáp án; chạy eval và ghi nhận tỷ lệ trả lời đúng; thiết lập guardrail; thực hiện và ghi lại biên bản red-team. | **Lê Tấn Lộc** |
 | **CP#5: Final build & Deploy** | 10/12/2026 | Hoàn thiện hệ thống, deploy bản chạy ổn định; quan trắc log, ghi nhận số câu hỏi, tỉ lệ trả lời sai, độ trễ, chi phí token; diễn tập một sự cố (AI trả lời sai), viết biên bản hậu kiểm. | **Nguyễn Nhật Khang** |
-| **CP#6: Individual oral** | 16/12/2026 | Tổng hợp và ôn lại kiến thức, xem lại code và các tài liệu liên quan đến đồ án, chuẩn bị vấn đáp cá nhân. | **Nguyễn Nhật Khang, Lê Tuấn Lộc, Võ Thiện Nhân**(cá nhân) |
+| **CP#6: Individual oral** | 16/12/2026 | Tổng hợp và ôn lại kiến thức, xem lại code và các tài liệu liên quan đến đồ án, chuẩn bị vấn đáp cá nhân. | **Nguyễn Nhật Khang, Lê Tuấn Lộc, Võ Thiện Nhân** (cá nhân) |
 
 ---
 
@@ -83,8 +83,7 @@ Kế hoạch 6 Checkpoints được thiết kế vừa sức cho nhóm 3 ngườ
 
 ### Risk 1: Tranh chấp dữ liệu (Race Condition) làm bán vượt số lượng vé (Overselling)
 - **Bản chất rủi ro:** Khi hàng trăm người dùng cùng bấm nút đặt vé trong 1 giây, các lệnh đọc/ghi đồng thời vào database nếu không được cô lập tốt sẽ dẫn đến tình trạng bán âm vé.
-- **Biện pháp giảm thiểu bắt đầu ngay tuần này (Mitigation starting this week):**  
-  *Ngay trong tuần này*, Nguyễn Văn A viết một script Node.js độc lập kiểm thử trên một instance Redis cục bộ, sử dụng lệnh `DECRBY` kết hợp kiểm tra điều kiện (hoặc Lua script đơn giản) để đảm bảo bộ đếm dừng chính xác khi số vé về 0 dưới 50 worker chạy song song.
+- **Biện pháp giảm thiểu bắt đầu ngay tuần này:**  Lê Tấn Lộc viết một script Node.js độc lập kiểm thử trên một instance Redis cục bộ, sử dụng lệnh `DECRBY` kết hợp kiểm tra điều kiện (hoặc Lua script đơn giản) để đảm bảo bộ đếm dừng chính xác khi số vé về 0 dưới 50 worker chạy song song.
 
 ### Risk 2: File PDF của nghệ sĩ bị lỗi font hoặc dàn trang phức tạp làm LLM trích xuất sai
 - **Bản chất rủi ro:** Tài liệu PDF từ nghệ sĩ có thể sử dụng layout nhiều cột hoặc font chữ không tiêu chuẩn, khiến thư viện trích xuất text trả về chuỗi văn bản lộn xộn, làm LLM hiểu sai ngữ cảnh về quyền lợi vé và quy định độ tuổi.
