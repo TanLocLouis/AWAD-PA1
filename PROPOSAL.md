@@ -1,10 +1,10 @@
 # Project Proposal: TicketBox
 
-**Repository Link:** `https://github.com/`   
+**Repository Link:** `https://github.com/TanLocLouis/AWAD-PA1.git`   
 **Team Members:**
 - 23120050: Nguyễn Nhật Khang
 - 23120057: Lê Tấn Lộc
-- 231200xx: Võ Thiện Nhân
+- 23120066: Võ Thiện Nhân
 
 ---
 
@@ -70,12 +70,12 @@ Kế hoạch 6 Checkpoints được thiết kế vừa sức cho nhóm 3 ngườ
 
 | Checkpoint | Hạn nộp (Due Date) | Nội dung công việc bàn giao | Người phụ trách chính |
 | :--- | :--- | :--- | :--- |
-| **CP#1: Project Scaffold & Database Design** | 20/10/2026 | Khởi tạo repo, thiết lập cấu trúc thư mục Modular Monolith (Express.js + Vite/React), Docker Compose (PostgreSQL, Redis), thiết kế ERD cơ sở dữ liệu. | **Nguyễn Văn A** |
-| **CP#2: Auth & Event Catalog** | 03/11/2026 | Hoàn thiện Auth API (JWT, phân quyền Audience/Organizer); CRUD sự kiện và hạng vé; UI xem danh sách và chi tiết sự kiện trên React. | **Trần Thị B** |
-| **CP#3: Basic Booking & Mock Payment Flow** | 17/11/2026 | Tạo đơn hàng, tích hợp `Idempotency-Key` chống trùng giao dịch, Mock Payment (nút xác nhận thành công/thất bại), giao diện xem vé đã mua. | **Nguyễn Văn A** |
-| **CP#4: Redis Concurrency & Anti-Overselling** | 01/12/2026 | Tích hợp Redis Lua script để trừ số lượng vé nguyên tử (atomic decrement); cơ chế giữ vé 10 phút (TTL rollback); viết script test tranh mua vé cơ bản. | **Nguyễn Văn A** |
-| **CP#5: LLM PDF Summarization Pipeline** | 15/12/2026 | Pipeline nhận file PDF, parse text, gọi Gemini API sinh JSON có cấu trúc; giao diện upload PDF và màn hình duyệt/sửa bản nháp cho Organizer. | **Lê Văn C** |
-| **CP#6: Integration, Polish & Final Demo** | 29/12/2026 | Nối hoàn chỉnh toàn bộ luồng từ tạo sự kiện, trích xuất bio, mở bán chống oversell; đóng gói Docker chạy toàn bộ hệ thống; hoàn thiện báo cáo và kịch bản demo. | **Trần Thị B** |
+| **CP#1: Proposal & Plan** | 07/10/2026 | Đề xuất ý tưởng, chốt tính năng LLM, lựa chọn công nghệ, viết proposal và plan; khởi tạo repo cho project. | **Lê Tấn Lộc** |
+| **CP#2: Harness & CI** | 11/11/2026 | Xây dựng các file quy ước; cấu hình lint; cài đặt test framework; khởi tạo và cấu hình CI pipeline, thiết lập branch protection chặn merge. | **Võ Thiện Nhân** |
+| **CP#3: Prototype with LLM feature** | 18/11/2026 | Viết spec và cài đặt tính năng LLM; nạp dữ liệu sản phẩm kèm thông số; ghi log các câu hỏi/đáp. | **Nguyễn Nhật Khang** |
+| **CP#4: Eval, Guardrail & Human gate** | 25/11/2026 | Chuẩn bị bộ khoảng 40-50 câu hỏi có đáp án; chạy eval và ghi nhận tỷ lệ trả lời đúng; thiết lập guardrail; thực hiện và ghi lại biên bản red-team. | **Lê Tuấn Lộc** |
+| **CP#5: Final build & Deploy** | 10/12/2026 | Hoàn thiện hệ thống, deploy bản chạy ổn định; quan trắc log, ghi nhận số câu hỏi, tỉ lệ trả lời sai, độ trễ, chi phí token; diễn tập một sự cố (AI trả lời sai), viết biên bản hậu kiểm. | **Nguyễn Nhật Khang** |
+| **CP#6: Individual oral** | 16/12/2026 | Tổng hợp và ôn lại kiến thức, xem lại code và các tài liệu liên quan đến đồ án, chuẩn bị vấn đáp cá nhân. | **Nguyễn Nhật Khang, Lê Tuấn Lộc, Võ Thiện Nhân**(cá nhân) |
 
 ---
 
